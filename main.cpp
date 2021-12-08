@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Duree.h"
+#include "Duree.hpp"
 
 using namespace std;
 
