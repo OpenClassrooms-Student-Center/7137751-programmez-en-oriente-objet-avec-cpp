@@ -7,7 +7,9 @@ using namespace std;
 int main()
 {
     // Création des personnages
-    Personnage david, goliath("Epée aiguisée", 20);
+    Personnage david("David", "Aiguille", 25),
+               goliath("Goliath", "Epée aiguisée", 20),
+               mathieu("Mathieu", "Crocobur", 50);
 
     // Au combat !
     goliath.attaquer(david);
@@ -18,10 +20,30 @@ int main()
     goliath.attaquer(david);
 
     // Temps mort ! Voyons voir la vie de chacun...
-    cout << "David" << endl;
     david.afficherEtat();
-    cout << endl << "Goliath" << endl;
     goliath.afficherEtat();
-
+    mathieu.afficherEtat();
+    
+    // Au combat !
+    mathieu.attaqueMagique(david);
+    goliath.attaquer(mathieu);
+    mathieu.attaquer(david);
+    
+    // Infos
+    david.afficherEtat();
+    goliath.afficherEtat();
+    mathieu.afficherEtat();
+    
+    // Au combat !
+    mathieu.attaquer(goliath);
+    goliath.boirePotionDeVie(20);
+    goliath.attaqueMagique(mathieu);
+    mathieu.attaquer(goliath);
+    
+    // Infos
+    david.afficherEtat();
+    goliath.afficherEtat();
+    mathieu.afficherEtat();
+    
     return 0;
 }
